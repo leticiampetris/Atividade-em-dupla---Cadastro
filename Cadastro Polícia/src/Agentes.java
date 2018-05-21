@@ -16,12 +16,22 @@ public class Agentes {
     String[] ceps = new String[100];
     String[] complementos = new String[100];
     String[] admissao = new String[100];
+    int atual = 0;
     
     
-      /*  nomes[i] = JOptionPane.showInputDialog(null, 
-                "Nome do Agente: ", "CADASTRAR AGENTE");
-        sexos[i] = JOptionPane.showInputDialog(null, "Sexo", "CADASTRAR AGENTE"
-        .J*/
+    
+    public void cadastrarAgentes(){
+    
+    nomes[atual] = JOptionPane.showInputDialog(null, "Nome do Agente: ", "CADASTRAR AGENTE");
+    sexos[atual] = JOptionPane.showInputDialog(null, "Sexo", "CADASTRAR AGENTE"
+    ,JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+        "", "Masculino", "Feminino"
+        },
+        ""
+        ).toString();
+    patentes[atual] = JOptionPane.showInputDialog(null, nomes[atual], " qual a sua patente:");
+    cpfs[atual] = JOptionPane.showInputDialog(null, nomes[atual], " o seu CPF por favor:");
+    
         
     
     
