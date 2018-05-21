@@ -9,7 +9,7 @@ package cadastro.polícia;
  *
  * @author Alunos
  */
-public class CadastroPolícia {
+public class Principal {
 
     /**
      * @param args the command line arguments
