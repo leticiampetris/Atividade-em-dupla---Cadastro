@@ -13,7 +13,7 @@ public class Viaturas {
         
         
         int menuViaturas = JOptionPane.showOptionDialog(null,
-                "Selecione a op��o desejada:", "VIATURAS", 0,
+                "Selecione a opção desejada:", "VIATURAS", 0,
                 JOptionPane.QUESTION_MESSAGE, null,
                 new Object[]{
                     "Cadastrar",
