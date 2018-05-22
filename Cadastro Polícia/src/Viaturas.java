@@ -20,7 +20,7 @@ public class Viaturas {
                     "Editar",
                     "Listar"}, null);
 
-        while (menuViaturas < 3) {
+        while (menuViaturas != JOptionPane.CLOSED_OPTION && menuViaturas < 3) {
             switch (menuViaturas) {
                 case 0:
                     registroViaturas.cadastrar();
@@ -34,7 +34,16 @@ public class Viaturas {
                 default:
                     JOptionPane.showMessageDialog(null, "Sistema encerrado.");
             }
+            
+            menuViaturas = JOptionPane.showOptionDialog(null,
+                "Selecione a op��o desejada:", "VIATURAS", 0,
+                JOptionPane.QUESTION_MESSAGE, null,
+                new Object[]{
+                    "Cadastrar",
+                    "Editar",
+                    "Listar"}, null);
         }
+        
     }
     public static void main(String[] args) {
         new Viaturas().menuViatura();

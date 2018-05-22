@@ -30,7 +30,6 @@ public class CadastroViaturas {
         anos[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite o ano:"));
         placas[posicao] = JOptionPane.showInputDialog("Digite a placa:");
         licenciamentos[posicao] = JOptionPane.showInputDialog("Digite a data do próximo licenciamento:");
-        modelos[posicao] = JOptionPane.showInputDialog("Digite o modelo:");
         
         Object[] delegaciasObject = new Object[CadastroDelegacias.atual];
         for (int posicaoAux = 0; posicaoAux < CadastroDelegacias.atual; posicaoAux++){
