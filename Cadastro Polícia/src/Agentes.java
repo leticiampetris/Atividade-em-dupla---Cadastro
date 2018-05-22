@@ -71,18 +71,17 @@ public class Agentes {
         },
         ""
         ).toString();
-    patentes[posicao] = JOptionPane.showInputDialog(null, 
-            nomes[posicao], ", digite sua patente:");
-    cpfs[posicao] = JOptionPane.showInputDialog(null, 
-            nomes[posicao], ", o seu CPF por favor:")
+    patentes[posicao] = JOptionPane.showInputDialog("Patente:");
+    cpfs[posicao] = JOptionPane.showInputDialog("CPF do Agente:")
             .replace(".", "")
             .replace("-", "");
-    rgs[posicao] = JOptionPane.showInputDialog(null, 
-            nomes[posicao], ", o seu RG por favor:");
-    nascimentos[posicao] = JOptionPane.showInputDialog(null, 
-            nomes[posicao], ", digite a sua data de nascimento:");
-    bairros[posicao] = JOptionPane.showInputDialog(null, 
-            nomes[posicao], ", qual o seu CEP:");
+    rgs[posicao] = JOptionPane.showInputDialog("RG do Agente:")
+            .replace(".", "")
+            .replace("/", "")
+            .replace("-", "");
+    nascimentos[posicao] = JOptionPane.showInputDialog("Data de nascimento:")
+            .replace("/", "");
+    bairros[posicao] = JOptionPane.showInputDialog("CEP:");
     ruas[posicao] = JOptionPane.showInputDialog(null, 
             nomes[posicao], ", digite o logradouro:");
     numeros[posicao]= JOptionPane.showInputDialog(null, 

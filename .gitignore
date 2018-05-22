@@ -1,4 +1,8 @@
 *.xml
 *.properties
 *.mf
+<<<<<<< HEAD
+=======
+/Cadastro Polícia/nbproject/private/
+>>>>>>> e34796dbbfd0e4b879aece29bd90385234fac7a7
 /Cadastro Polícia/build/
