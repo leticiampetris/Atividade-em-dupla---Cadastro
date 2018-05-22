@@ -37,19 +37,18 @@ public class CadastroDelegacias {
         String busca = JOptionPane.showInputDialog("Digite parte do nome da delegacia para editar:")
                 .trim().replace(".", "");
         for (int posicao = 0; posicao < atual; posicao++) {
-            /* if (placas[posicao].equals(busca)) {
-             solicitarInformacao(posicao);
-             return;
-             }*/
-
+            if (nomes[posicao].contains(busca)) {
+                solicitarInformacao(posicao);
+                return;
         }
+    }
     }
 
     public void listar() {
 
         String texto = "";
-        for (int i = 0; i < atual; i++) {
-//            texto += placas[i] + "   " + tipos[i] + "\n";
+        for (int posicao = 0; posicao < atual; posicao++) {
+            texto += nomes[posicao] + "   " + areas[posicao] + "\n";
         }
         JOptionPane.showMessageDialog(null, texto);
 
