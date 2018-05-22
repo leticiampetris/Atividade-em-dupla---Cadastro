@@ -22,8 +22,8 @@ public class Delegacias {
                     "Editar",
                     "Listar"}, null);
 
-        while (menuViaturas < 3) {
-            switch (menuViaturas) {
+        while (menuDelegacias < 3) {
+            switch (menuDelegacias) {
                 case 0:
                     registroDelegacias.cadastrar();
                     break;
@@ -37,4 +37,5 @@ public class Delegacias {
                     JOptionPane.showMessageDialog(null, "Sistema encerrado.");
             }
         }
+    }
 }

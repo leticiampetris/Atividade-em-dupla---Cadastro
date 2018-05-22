@@ -31,12 +31,18 @@ public class CadastroViaturas {
         placas[posicao] = JOptionPane.showInputDialog("Digite a placa:");
         licenciamentos[posicao] = JOptionPane.showInputDialog("Digite a data do próximo licenciamento:");
         modelos[posicao] = JOptionPane.showInputDialog("Digite o modelo:");
+        
+        Object[] delegaciasObject = new Object[CadastroDelegacias.atual];
+        for (int posicaoAux = 0; posicaoAux < CadastroDelegacias.atual; posicaoAux++){
+            delegaciasObject[posicaoAux] = CadastroDelegacias.nomes[posicaoAux];
+        }
+        
         delegacias[posicao] = JOptionPane.showInputDialog(null,
                 "Selecione a delegacia de vinculação:",
                 "VIATURAS",
                 JOptionPane.QUESTION_MESSAGE,
                 null,
-                new Object[]{"DRP Centro", "DRP Norte", "DRP Sul"}, null).toString();
+                delegaciasObject, null).toString();
     }
 
     public void cadastrar() {
