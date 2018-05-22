@@ -16,43 +16,13 @@ public class Agentes {
     String[] ceps = new String[100];
     String[] complementos = new String[100];
     String[] admissoes = new String[100];
+    String[] delegacias = new String[4];
+    
     int atual = 0;
     
-    
-    
     public void cadastrarAgente(){
-         nomes[atual] = JOptionPane.showInputDialog(null, 
-            "Nome do Agente: ", "CADASTRAR AGENTE");
-    sexos[atual] = JOptionPane.showInputDialog(null, 
-            "Sexo", "CADASTRAR AGENTE"
-    ,JOptionPane.QUESTION_MESSAGE, null, new Object[]{
-        "", "Masculino", "Feminino"
-        },
-        ""
-        ).toString();
-    patentes[atual] = JOptionPane.showInputDialog(null, 
-            nomes[atual], ", digite sua patente:");
-    cpfs[atual] = JOptionPane.showInputDialog(null, 
-            nomes[atual], ", o seu CPF por favor:")
-            .replace(".", "")
-            .replace("-", "");
-    rgs[atual] = JOptionPane.showInputDialog(null, 
-            nomes[atual], ", o seu RG por favor:");
-    nascimentos[atual] = JOptionPane.showInputDialog(null, 
-            nomes[atual], ", digite a sua data de nascimento:");
-    bairros[atual] = JOptionPane.showInputDialog(null, 
-            nomes[atual], ", qual o seu CEP:");
-    ruas[atual] = JOptionPane.showInputDialog(null, 
-            nomes[atual], ", digite o logradouro:");
-    numeros[atual]= JOptionPane.showInputDialog(null, 
-            nomes[atual], ", o número da sua residência:");
-    ceps[atual] = JOptionPane.showInputDialog(null, 
-            nomes[atual], ", o CEP por favor:");
-    complementos[atual] = JOptionPane.showInputDialog(null, 
-            nomes[atual], ", o complemento:");
-    admissoes[atual] = JOptionPane.showInputDialog(null, 
-            nomes[atual], ", data de admissão:");
-        atual++;
+         solicitarInformacao(atual);
+         atual++;
     }
     
     public void listarAgentes(){
@@ -65,10 +35,13 @@ public class Agentes {
                 + "\n" + texto);
     }
     
+    
+    
     public void bucarAgentes(){
         String busca = JOptionPane.showInputDialog("Digite o nome parcial para busca:");
         for(int i = 0; i < atual; i++){
             if(nomes[i].contains(busca)){
+                apresentarInformacao(i);
                 
             }
         }
@@ -122,6 +95,24 @@ public class Agentes {
             nomes[posicao], ", data de admissão:");
         
     }
+    
+    public void apresentarInformacao(int posicao){
+        JOptionPane.showMessageDialog(null, "Informção sobre Agente"
+        + "\nNome:" + nomes[posicao]
+        + "\nSexo:" + sexos[posicao]
+        + "\npatente: " + patentes[posicao]
+        + "\nCPF: " + cpfs[posicao]
+        + "\nRG: " + rgs[posicao]
+        + "\nData Nascimento: " + nascimentos[posicao]
+        + "\nBairro: " + bairros [posicao]
+        + "\nRua: " + ruas [posicao]
+        + "\nCEP: " + ceps [posicao]
+        + "\nComplento: " + complementos [posicao]
+        + "\nData Admissão: " + admissoes [posicao]);
+        
+    }
+    
+     }
     
     
     
