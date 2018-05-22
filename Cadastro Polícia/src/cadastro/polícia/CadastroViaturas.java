@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cadastro.polícia;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,62 +9,66 @@ package cadastro.polícia;
  */
 public class CadastroViaturas {
 
+   
     String[] tipos = new String[100];
     String[] marcas = new String[100];
     String[] modelos = new String[100];
     int[] anos = new int[100];
     String[] placas = new String[100];
     String[] licenciamentos = new String[100];
-    String[] delegacias = new String[100];
+    int[] delegacias = new int[100];
     int atual = 0;
       
-    public void solicitarInformacao(){
+    public void solicitarInformacao(int posicao) {
+
+        tipos[posicao] = JOptionPane.showInputDialog(null,
+        "Selecione o tipo de viatura:",
+        "VIATURAS",
+        JOptionPane.QUESTION_MESSAGE,
+        null,
+        new Object []{
+            "Automóvel", "Motocicleta"}, null).toString();
+        marcas[posicao] = JOptionPane.showInputDialog("Digite a marca:");
+        modelos[posicao] = JOptionPane.showInputDialog("Digite o modelo:");
+        anos[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite o ano:"));
+        placas[posicao] = JOptionPane.showInputDialog("Digite a placa:");
+        licenciamentos[posicao] = JOptionPane.showInputDialog("Digite a data do próximo licenciamento:");
+        modelos[posicao] = JOptionPane.showInputDialog("Digite o modelo:");
+        delegacias[posicao] = Integer.parseInt(JOptionPane.showInputDialog(null,
+        "Selecione a delegacia de vinculação:",
+        "VIATURAS",
+        JOptionPane.QUESTION_MESSAGE,
+        null,
+        new Object []{
+            "DRP Centro", "DRP Norte", "DRP Sul"}, null).toString());
+        }
         
-        public void solicitarInformacao(int posicao) {
+    public void cadastrar(){
+        solicitarInformacao(atual);
+        atual++;
+    }
 
-        tipos[posicao] = 
-                
-        nomes[posicao] = JOptionPane.showInputDialog("Digite o seu nome");
+    public void editar() {
 
-        idades[posicao] = Integer.parseInt(JOptionPane.showInputDialog(
+        String busca = JOptionPane.showInputDialog("Digite a placa para editar:")
+                       .trim().toUpperCase().replace("-", "");
+        for (int i = 0; i < atual; i++) {
+            if (placas[i].equals(busca)) {
+                solicitarInformacao(i);
+                return;
+            }
 
-                nomes[posicao] + " digite a sua idade"));
-
-        sexos[posicao] = JOptionPane.showInputDialog(
-
-                nomes[posicao] + " digite o seu sexo").charAt(0);
-
-        cpfs[posicao] = JOptionPane
-
-                .showInputDialog(nomes[posicao] + " digite o seu CPF")
-
-                .replace(".", "").replace("-", "");
-
-        estados[posicao] = JOptionPane.showInputDialog(
-
-                "Digite o seu estado").trim().toUpperCase();
-
-        cidades[posicao] = JOptionPane.showInputDialog("Digite a sua cidade");
-
-        logradouros[posicao] = JOptionPane.showInputDialog(
-
-                "Digite o seu logradouro");
-
-        bairros[posicao] = JOptionPane.showInputDialog("Digite o seu bairro");
-
-        ceps[posicao] = JOptionPane.showInputDialog("Digite o seu cep");
-
-        numeros[posicao] = JOptionPane.showInputDialog("Digite o seu número");
-
-        complementos[posicao] = JOptionPane.showInputDialog("Digite o complemento");
-
-
+        }
     }
     
     
-    public void cadastrar(){
-    
-        
-        
-}
+    public void listar() {
+
+        String texto = "";
+        for (int i = 0; i < atual; i++) {
+            texto += placas[i] + "   " + tipos[i] + "\n";
+        }
+        JOptionPane.showMessageDialog(null, texto);
+    }
+      
 }
