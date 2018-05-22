@@ -25,7 +25,7 @@ public class CadastroViaturas {
                 null,
                 new Object[]{
                     "Automóvel", "Motocicleta"}, null).toString();
-        marcas[posicao] = JOptionPane.showInputDialog("Digite a marca:");
+        marcas[posicao] = JOptionPane.showInputDialog(null, "Digite a marca:", "VIATURAS");
         modelos[posicao] = JOptionPane.showInputDialog("Digite o modelo:");
         anos[posicao] = Integer.parseInt(JOptionPane.showInputDialog("Digite o ano:"));
         placas[posicao] = JOptionPane.showInputDialog("Digite a placa:");

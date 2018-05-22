@@ -18,7 +18,7 @@ public class CadastroDelegacias {
 
     public void solicitarInformacao(int posicao) {
 
-        nomes[posicao] = JOptionPane.showInputDialog("Digite o nome da delegacia:");
+        nomes[posicao] = JOptionPane.showInputDialog(null, "Digite o nome:", "DELEGACIAS", null, null);
         enderecos[posicao] = JOptionPane.showInputDialog("Digite o endereço:");
         telefones[posicao] = JOptionPane.showInputDialog("Digite o telefone:");
         horarios[posicao] = JOptionPane.showInputDialog("Digite o horário de funcionamento:");
