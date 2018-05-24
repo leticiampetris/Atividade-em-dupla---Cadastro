@@ -25,7 +25,7 @@ public class Menu {
                 , null);
         
         
-        while (principal < 4) {
+        while (principal < 4 && principal != JOptionPane.CLOSED_OPTION) {
             switch (principal) {
                 case 0: agentes.menuAgentes();
                     break;                  
