@@ -144,27 +144,46 @@ public class CadastroOcorrencias {
             if(norte > maiorRegiao){
                 maiorRegiao = norte;
                 regiaoA = "Norte";
+                
+            }else if(norte == maiorRegiao){
+                regiaoA = regiaoA + ", Norte";             
+                
             }else if (sul > maiorRegiao){
                 maiorRegiao = sul;
                 regiaoA = "Sul";
+                
+            }else if(sul == maiorRegiao){
+                regiaoA = regiaoA + ", Sul";
+                        
             }else if (leste > maiorRegiao){
                 maiorRegiao = leste;
                 regiaoA = "Leste";
+                
+            }else if(leste == maiorRegiao){
+                regiaoA = regiaoA + ", Leste";
+                
             }else if (oeste > maiorRegiao){
                 maiorRegiao = oeste;
                 regiaoA = "Oeste";
+                
+            }else if(oeste == maiorRegiao){
+                regiaoA = regiaoA + ", Oeste";
+                        
             }else if (centro > maiorRegiao){
                 maiorRegiao = centro;
                 regiaoA = "Centro";
+                
+            }else if(norte == maiorRegiao){
+                regiaoA = regiaoA + ", Centro";
                 
             }
             
         }
         
         JOptionPane.showMessageDialog(null, "Dados da Ocorrências"
-         + "\nRegião com maior registro de ocorrências: " + regiaoA
-         + "\nPeríodo com maior registro de ocorrências: " + periodoA
-         + "\nTipo mais frequente de ocorrências: " + ocorrencias);
+         + "\nRegião(ões) com maior registro de ocorrências: " + regiaoA
+         + "\nPeríodo(os) com maior registro de ocorrências: " + periodoA
+         + "\nTipo(s) mais frequente de ocorrências: " + ocorrencias); 
         
     }
     
@@ -220,7 +239,7 @@ public class CadastroOcorrencias {
         + "\nPeríodo: " + periodo[posicao]
         + "\nClassificação:" + tipo[posicao]
         + "\nDescrição:" + descricao[posicao]
-        + "\nBairro:" + bairro[posicao]
+        + "\nRegião:" + regiao[posicao]
         + "\nEndereço:" + endereco[posicao]
         + "\nDelegacia:");
     }
