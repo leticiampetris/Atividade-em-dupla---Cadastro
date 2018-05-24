@@ -45,10 +45,10 @@ public class CadastroAgentes {
             }}}
     
     public void solicitarInformacao(int posicao){
-        nomes[posicao] = JOptionPane.showInputDialog(null, 
-            "Nome do Agente: ", "CADASTRAR AGENTE").trim();
+        nomes[posicao] = JOptionPane.showInputDialog(
+            "Nome do Agente: ").trim();
     sexos[posicao] = JOptionPane.showInputDialog(null, 
-            "Sexo", "CADASTRAR AGENTE"
+            "Sexo", null
     ,JOptionPane.QUESTION_MESSAGE, null, new Object[]{
         "", "Masculino", "Feminino"
         },

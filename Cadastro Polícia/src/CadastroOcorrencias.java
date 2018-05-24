@@ -14,6 +14,7 @@ public class CadastroOcorrencias {
     int[] boletim = new int[100];
 
     int atual = 0;
+   
     
     public void cadastrarOcorrencia(){
         solicitarInformacoes(atual);
@@ -40,6 +41,35 @@ public class CadastroOcorrencias {
                 solicitarInformacoes(i);
             }
         }
+    }
+    
+    public void estatistica(){
+        String maiorOcorrencias = "";   int assalto = 0; int homicidio = 0; int paz =0; int roubo =0; int td =0; int vd =0; 
+        String maiorPeriodo = "";      
+        String maiorRegiao = "";        
+        
+        for(int i = 0; i < atual; i++){
+            if(tipo[atual].equals("Assalto")){
+                assalto ++;
+                
+            }else if(tipo[atual].equals("Homicídio")){
+                homicidio ++;
+                    
+            }else if(tipo[atual].equals("Pertubação da Paz")){
+                paz++;
+                
+            }else if(tipo[atual].equals("Trafico de Drogas")){
+                td++;
+            }else if(tipo[atual].equals("Violência Doméstica")){
+                vd++;
+            }         
+            
+            
+            
+            
+            
+        }
+        
         
     }
     

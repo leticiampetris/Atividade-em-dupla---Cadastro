@@ -13,8 +13,6 @@ public class Menu {
     Viaturas viaturas = new Viaturas();
     Delegacias delegacias = new Delegacias();
     
-    
-    
     public void menuPrincipal(){
         int principal = JOptionPane.showOptionDialog(null,
                 "Selecione a opção desejada:", "SISTEMA POLICIAL", 0,
