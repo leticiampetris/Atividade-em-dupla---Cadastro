@@ -8,7 +8,11 @@ import javax.swing.JOptionPane;
 public class CadastroDelegacias {
 
     static String[] nomes = new String[100];
-    String[] enderecos = new String[100];
+    String[] ruas = new String[100];
+    String[] numeros = new String[100];
+    String[] complementos = new String[100];
+    String[] bairros = new String[100];
+    String[] ceps = new String[100];
     String[] telefones = new String[100];
     String[] horarios = new String[100];
     String[] delegados = new String[100];
@@ -18,13 +22,17 @@ public class CadastroDelegacias {
 
     public void solicitarInformacao(int posicao) {
 
-        nomes[posicao] = JOptionPane.showInputDialog("Digite o nome:");
-        enderecos[posicao] = JOptionPane.showInputDialog("Digite o endereço:");
+        nomes[posicao] = JOptionPane.showInputDialog("Digite o nome da delegacia:");
+        ruas[posicao] = JOptionPane.showInputDialog("Digite o logradouro:");
+        numeros[posicao] = JOptionPane.showInputDialog("Digite o número do imóvel:");
+        complementos[posicao] = JOptionPane.showInputDialog("Digite o complemento:");
+        bairros[posicao] = JOptionPane.showInputDialog("Digite o bairro:");
+        ceps[posicao] = JOptionPane.showInputDialog("Digite o CEP");
         telefones[posicao] = JOptionPane.showInputDialog("Digite o telefone:");
         horarios[posicao] = JOptionPane.showInputDialog("Digite o horário de funcionamento:");
         delegados[posicao] = JOptionPane.showInputDialog("Digite o nome do delegado:");
-        datas[posicao] = JOptionPane.showInputDialog("Digite a data de início do funcionamento:");
-        areas[posicao] = JOptionPane.showInputDialog("Informe a área de abrangência:");
+        areas[posicao] = JOptionPane.showInputDialog("Informe a área de abrangência de " +
+                nomes[posicao] + ":");
     }
 
     public void cadastrar() {
@@ -48,9 +56,10 @@ public class CadastroDelegacias {
 
         String texto = "";
         for (int posicao = 0; posicao < atual; posicao++) {
-            texto += nomes[posicao] + "   " + areas[posicao] + "\n";
+            texto += nomes[posicao] + " | " + areas[posicao] + "\n";
         }
-        JOptionPane.showMessageDialog(null, texto);
+        JOptionPane.showMessageDialog(null, "Delegacias cadastradas:" +
+                "\n\nNome | Área de abrangência" + "\n" + texto);
 
     }
     
