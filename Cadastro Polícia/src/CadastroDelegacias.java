@@ -18,7 +18,7 @@ public class CadastroDelegacias {
 
     public void solicitarInformacao(int posicao) {
 
-        nomes[posicao] = JOptionPane.showInputDialog(null, "Digite o nome:", "DELEGACIAS", null, null);
+        nomes[posicao] = JOptionPane.showInputDialog("Digite o nome:");
         enderecos[posicao] = JOptionPane.showInputDialog("Digite o endereço:");
         telefones[posicao] = JOptionPane.showInputDialog("Digite o telefone:");
         horarios[posicao] = JOptionPane.showInputDialog("Digite o horário de funcionamento:");
@@ -53,5 +53,49 @@ public class CadastroDelegacias {
         JOptionPane.showMessageDialog(null, texto);
 
     }
+    
+    public void estatistica (){
+        
+        Object[] delegaciasObject = new Object[atual];
+        
+        for (int posicao = 0; posicao < atual; posicao++){
+            delegaciasObject[posicao] = nomes[posicao];
+        }
+        
+        String selecao = JOptionPane.showInputDialog(null,
+                "Selecione a delegacia:",
+                null,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                delegaciasObject, null).toString();
+        
+        int quantidadeAgentes = 0;
 
-}
+        for (int i = 0; i < CadastroAgentes.atual; i++) {
+            if (CadastroAgentes.delegacias[i].equals(selecao)) {
+                quantidadeAgentes++;
+            }
+        }
+        int quantidadeOcorrencias = 0;
+
+        for (int i = 0; i < CadastroOcorrencias.atual; i++) {
+            if (CadastroOcorrencias.delegacias[i].equals(selecao)) {
+                quantidadeOcorrencias++;
+            }
+        }
+        int quantidadeViaturas = 0;
+
+        for (int i = 0; i < CadastroViaturas.atual; i++) {
+            if (CadastroViaturas.delegacias[i].equals(selecao)){
+                quantidadeViaturas++;
+            }
+        }
+
+        JOptionPane.showMessageDialog(null,
+                selecao + " possui:" +
+                "\n" + quantidadeAgentes + " agentes." +
+                "\n" + quantidadeOcorrencias + " ocorrências." +
+                "\n" + quantidadeViaturas + " viaturas.";
+        }
+      
+    }

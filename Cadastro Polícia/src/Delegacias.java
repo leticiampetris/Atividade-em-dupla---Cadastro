@@ -17,9 +17,10 @@ public class Delegacias {
                 new Object[]{
                     "Cadastrar",
                     "Editar",
-                    "Listar"}, null);
+                    "Listar",
+                    "Estatísticas"}, null);
 
-        while (menuDelegacias != JOptionPane.CLOSED_OPTION && menuDelegacias < 3) {
+        while (menuDelegacias != JOptionPane.CLOSED_OPTION && menuDelegacias < 4) {
             switch (menuDelegacias) {
                 case 0:
                     registroDelegacias.cadastrar();
@@ -29,6 +30,9 @@ public class Delegacias {
                     break;
                 case 2:
                     registroDelegacias.listar();
+                    break;
+                case 3:
+                    registroDelegacias.estatistica();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Sistema encerrado.");
@@ -40,7 +44,8 @@ public class Delegacias {
                 new Object[]{
                     "Cadastrar",
                     "Editar",
-                    "Listar"}, null);
+                    "Listar",
+                    "Estatística"}, null);
         }
     }
 
