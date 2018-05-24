@@ -87,19 +87,29 @@ public class CadastroOcorrencias {
             //Maior indice de criminalidade
             if(assalto > maiorOcorrencia){
                 maiorOcorrencia = assalto;
-                ocorrencias += "Assalto";
+                ocorrencias = "Assalto";
+            }else if (assalto == maiorOcorrencia){
+                ocorrencias = ocorrencias + ", Assalto";                
             }else if(homicidio > maiorOcorrencia){
                 maiorOcorrencia = homicidio;
-                ocorrencias += "Homicídio";
+                ocorrencias = "Homicídio";
+            }else if (homicidio == maiorOcorrencia){
+                ocorrencias = ocorrencias + ", Homicídio";
             }else if(paz > maiorOcorrencia){
                 maiorOcorrencia = paz;
-                ocorrencias += "Pertubação da Paz";
+                ocorrencias = "Pertubação da Paz";
+            }else if (paz == maiorOcorrencia){
+                ocorrencias = ocorrencias + ", Perturbação da Paz";
             }else if(td > maiorOcorrencia){
                 maiorOcorrencia = td;
-                ocorrencias += "Tráfico de Drogas";
+                ocorrencias = "Tráfico de Drogas";
+            }else if (td == maiorOcorrencia){
+                ocorrencias = ocorrencias + ", Tráfico de Drogas";
             }else if(vd > maiorOcorrencia){
                 maiorOcorrencia = vd;
-                ocorrencias += "Violência Doméstica";
+                ocorrencias = "Violência Doméstica";
+            }else if (vd == maiorOcorrencia){
+                ocorrencias = ocorrencias + ", Violência Doméstica";
             }
             
             //Quantidade de Períodos
@@ -117,18 +127,26 @@ public class CadastroOcorrencias {
             if(manha > maiorPeriodo){
                 maiorPeriodo = manha; 
                 periodoA = "Manhã";
+	    }else if (manha == maiorPeriodo){
+		periodoA = periodoA + ", Manhã";
             }else if(tarde > maiorPeriodo){
                 maiorPeriodo = tarde;
                 periodoA = "Tarde";
+	    }else if (tarde == maiorPeriodo){
+		periodoA = periodoA + ", Tarde";
             }else if(noite > maiorPeriodo){
                 maiorPeriodo = noite;
                 periodoA = "Noite";
+	    }else if (noite == maiorPeriodo){
+		periodoA = periodoA + ", Noite";
             }else if(madrugada > maiorPeriodo){
                 maiorPeriodo = madrugada;
                 periodoA = "Madrugada";
+	    }else if (madrugada == maiorPeriodo){
+		periodoA = periodoA + ", Madrugada";
             }
             
-            
+            //Quantidade região
             if(regiao[atual].equals("Norte")){
                 norte ++;  
             }else if(regiao[atual].equals("Sul")){
@@ -141,10 +159,11 @@ public class CadastroOcorrencias {
                 centro++;
             }         
             
+            //Maior região
             if(norte > maiorRegiao){
                 maiorRegiao = norte;
                 regiaoA = "Norte";
-                
+                           
             }else if(norte == maiorRegiao){
                 regiaoA = regiaoA + ", Norte";             
                 
@@ -182,7 +201,7 @@ public class CadastroOcorrencias {
         
         JOptionPane.showMessageDialog(null, "Dados da Ocorrências"
          + "\nRegião(ões) com maior registro de ocorrências: " + regiaoA
-         + "\nPeríodo(os) com maior registro de ocorrências: " + periodoA
+         + "\nPeríodo(s) com maior registro de ocorrências: " + periodoA
          + "\nTipo(s) mais frequente de ocorrências: " + ocorrencias); 
         
     }
