@@ -35,17 +35,6 @@ public class CadastroAgentes {
                 + "\n" + texto);
     }
     
-    public void bucarAgentes(){
-        String busca = JOptionPane.showInputDialog("Digite o nome parcial para busca:");
-        for(int i = 0; i < atual; i++){
-            if(nomes[i].contains(busca)){
-                apresentarInformacao(i);
-                
-            }
-        }
-        
-    }
-    
     public void editarAgente(){
         String editar = JOptionPane.showInputDialog("Digite o nome para busca");
         for(int i = 0; i < atual; i++){
@@ -53,15 +42,11 @@ public class CadastroAgentes {
                 solicitarInformacao(atual);
                 return;
                 
-            }
-        
-    }
-            
-    }
+            }}}
     
     public void solicitarInformacao(int posicao){
         nomes[posicao] = JOptionPane.showInputDialog(null, 
-            "Nome do Agente: ", "CADASTRAR AGENTE");
+            "Nome do Agente: ", "CADASTRAR AGENTE").trim();
     sexos[posicao] = JOptionPane.showInputDialog(null, 
             "Sexo", "CADASTRAR AGENTE"
     ,JOptionPane.QUESTION_MESSAGE, null, new Object[]{
@@ -69,30 +54,32 @@ public class CadastroAgentes {
         },
         ""
         ).toString();
-    patentes[posicao] = JOptionPane.showInputDialog("Patente:");
+    patentes[posicao] = JOptionPane.showInputDialog("Patente:").trim();
     cpfs[posicao] = JOptionPane.showInputDialog("CPF do Agente:")
             .replace(".", "")
-            .replace("-", "");
+            .replace("-", "")
+            .replace("/", "").trim();
     rgs[posicao] = JOptionPane.showInputDialog("RG do Agente:")
             .replace(".", "")
             .replace("/", "")
-            .replace("-", "");
+            .replace("-", "").trim();
     nascimentos[posicao] = JOptionPane.showInputDialog("Data de nascimento:")
-            .replace("/", "");
-    bairros[posicao] = JOptionPane.showInputDialog("CEP:");
-    ruas[posicao] = JOptionPane.showInputDialog(null, 
-            nomes[posicao], ", digite o logradouro:");
-    numeros[posicao]= JOptionPane.showInputDialog(null, 
-            nomes[posicao], ", o número da sua residência:");
-    ceps[posicao] = JOptionPane.showInputDialog(null, 
-            nomes[posicao], ", o CEP por favor:");
-    complementos[posicao] = JOptionPane.showInputDialog(null, 
-            nomes[posicao], ", o complemento:");
-    admissoes[posicao] = JOptionPane.showInputDialog(null, 
-            nomes[posicao], ", data de admissão:");
+            .replace("/", "")
+            .replace(".", "")
+            .replace("-", "").trim();
+    bairros[posicao] = JOptionPane.showInputDialog("Bairro:").trim();
+    ruas[posicao] = JOptionPane.showInputDialog(null, "Logradouro:").trim();
+    numeros[posicao]= JOptionPane.showInputDialog(null,"Nº:").trim();
+    ceps[posicao] = JOptionPane.showInputDialog(null, "CEP:").trim();
+    complementos[posicao] = JOptionPane.showInputDialog(null, "Complemento:");
+    admissoes[posicao] = JOptionPane.showInputDialog(null, "Data de admissão:")
+            .replace("/", "")
+            .replace(".", "")
+            .replace("-", "").trim();
     
     Object[] delegaciasObject = new Object[CadastroDelegacias.atual];
-        for(int posicaoAux = 0; posicaoAux < CadastroDelegacias.atual; posicaoAux++){
+    
+    for(int posicaoAux = 0; posicaoAux < CadastroDelegacias.atual; posicaoAux++){
             delegaciasObject[posicaoAux] = CadastroDelegacias.nomes[posicaoAux];
         }
         

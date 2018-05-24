@@ -20,11 +20,11 @@ public class Ocorrencias {
         while(ocorrencias != JOptionPane.CLOSED_OPTION && ocorrencias < 3){
             
             switch(ocorrencias){
-                case 0: cadastroOcorrencias.cadastrarOcocrrencia();
+                case 0: cadastroOcorrencias.cadastrarOcorrencia();
                     break;
                 case 1: cadastroOcorrencias.editar();
                     break;
-                case 2: cadastroOcorrencias.buscar();
+                case 2: cadastroOcorrencias.listar();
                     break;
                 default: JOptionPane.showMessageDialog(null, "Sistema Encerrado");
                     }

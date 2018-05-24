@@ -15,13 +15,13 @@ public class CadastroOcorrencias {
 
     int atual = 0;
     
-    public void cadastrarOcocrrencia(){
+    public void cadastrarOcorrencia(){
         solicitarInformacoes(atual);
         atual++;
         
     }
         
-    public void buscar(){
+    public void listar(){
         int busca = Integer.parseInt(JOptionPane.showInputDialog(
                 "Digite o código do B.O para buscar"));
         for(int i = 0; i < atual; i++){
@@ -64,10 +64,12 @@ public class CadastroOcorrencias {
         descricao[posicao] = JOptionPane.showInputDialog("Descrição dos fatos: ");
         bairro[posicao] = JOptionPane.showInputDialog("Bairro: ");
         endereco[posicao] = JOptionPane.showInputDialog("Endereço: ");
-        delegacia[posicao] = JOptionPane.showInputDialog("Delegacia: ");
+        delegacias[posicao] = JOptionPane.showInputDialog("Delegacia: ");
         boletim[posicao] = Integer.parseInt(JOptionPane.showInputDialog(
                 "Digite o código do boletim de ocorrência:"));
+        
         Object[] delegaciasObject = new Object[CadastroDelegacias.atual];
+        
         for (int posicaoAux = 0; posicaoAux < CadastroDelegacias.atual; posicaoAux++){
             delegaciasObject[posicaoAux] = CadastroDelegacias.nomes[posicaoAux];
         }
