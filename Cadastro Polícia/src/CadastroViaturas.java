@@ -68,10 +68,11 @@ public class CadastroViaturas {
 
         String texto = "";
         for (int i = 0; i < atual; i++) {
-            texto += placas[i] + "   " + tipos[i] + "   " + modelos[i] +
-                    "   " + anos[i] + "\n";
+            texto += placas[i] + " | " + tipos[i] + " | " + modelos[i] +
+                    " | " + anos[i] + "\n";
         }
-        JOptionPane.showMessageDialog(null, texto);
+        JOptionPane.showMessageDialog(null, "Viaturas cadastradas:" + "\n\n" +
+                "Placa | Tipo | Modelo | Ano" + "\n" + texto);
     }
 
 }
