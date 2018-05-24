@@ -34,8 +34,7 @@ public class Delegacias {
                 case 3:
                     registroDelegacias.estatistica();
                     break;
-                default:
-                    JOptionPane.showMessageDialog(null, "Sistema encerrado.");
+                
             }
             
             menuDelegacias = JOptionPane.showOptionDialog(null,
