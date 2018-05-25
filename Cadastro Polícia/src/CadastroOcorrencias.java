@@ -10,10 +10,10 @@ public class CadastroOcorrencias {
     String[] descricao = new String[100];
     String[] regiao = new String[100];
     String[] endereco = new String[100];
-    String[] delegacias = new String[100];
+    static String[] delegacias = new String[100];
     int[] boletim = new int[100];
 
-    int atual = 0;
+    static int atual = 0;
    
     
     public void cadastrarOcorrencia(){

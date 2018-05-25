@@ -16,9 +16,9 @@ public class CadastroAgentes {
     String[] ceps = new String[100];
     String[] complementos = new String[100];
     String[] admissoes = new String[100];
-    String[] delegacias = new String[100];
+    static String[] delegacias = new String[100];
     
-    int atual = 0;
+    static int atual = 0;
     
     public void cadastrarAgente(){
          solicitarInformacao(atual);

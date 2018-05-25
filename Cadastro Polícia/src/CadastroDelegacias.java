@@ -104,7 +104,7 @@ public class CadastroDelegacias {
                 selecao + " possui:" +
                 "\n" + quantidadeAgentes + " agentes." +
                 "\n" + quantidadeOcorrencias + " ocorrências." +
-                "\n" + quantidadeViaturas + " viaturas.";
+                "\n" + quantidadeViaturas + " viaturas.");
         }
       
     }
