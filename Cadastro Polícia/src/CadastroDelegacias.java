@@ -23,21 +23,21 @@ public class CadastroDelegacias {
 
     public void solicitarInformacao(int posicao) {
         
-        nomes[posicao] = JOptionPane.showInputDialog("Digite o nome da delegacia:");
-        ruas[posicao] = JOptionPane.showInputDialog("Digite o logradouro:");
-        numeros[posicao] = JOptionPane.showInputDialog("Digite o número do imóvel:");
-        complementos[posicao] = JOptionPane.showInputDialog("Digite o complemento:");
-        bairros[posicao] = JOptionPane.showInputDialog("Digite o bairro:");
+        nomes[posicao] = JOptionPane.showInputDialog("Digite o nome da delegacia:").trim();
+        ruas[posicao] = JOptionPane.showInputDialog("Digite o logradouro:").trim();
+        numeros[posicao] = JOptionPane.showInputDialog("Digite o número do imóvel:").trim();
+        complementos[posicao] = JOptionPane.showInputDialog("Digite o complemento:").trim();
+        bairros[posicao] = JOptionPane.showInputDialog("Digite o bairro:").trim();
         ceps[posicao] = JOptionPane.showInputDialog("Digite o CEP:")
                 .replace("-", "")
                 .replace("/", "")
-                .replace(".", "");
+                .replace(".", "").trim();
         telefones[posicao] = JOptionPane.showInputDialog("Digite o telefone:")
                 .replace("(", "")
                 .replace(")", "")
-                .replace("-", "");
+                .replace("-", "").trim();
         horarios[posicao] = JOptionPane.showInputDialog("Digite o horário de funcionamento:");
-        delegados[posicao] = JOptionPane.showInputDialog("Digite o nome do delegado:");
+        delegados[posicao] = JOptionPane.showInputDialog("Digite o nome do delegado:").trim();
         areas[posicao] = JOptionPane.showInputDialog(null, "Informe a área de abrangência:", null,
                 JOptionPane.QUESTION_MESSAGE,
                 null, new Object[]{
@@ -56,11 +56,14 @@ public class CadastroDelegacias {
 
         String busca = JOptionPane.showInputDialog("Digite parte do nome da delegacia para editar:")
                 .trim().replace(".", "");
-        for (int posicao = 0; posicao < atual; posicao++) {
-            if (nomes[posicao].contains(busca)) {
-                solicitarInformacao(posicao);
-                return;
-        }
+        
+        for (int i = 0; i < atual; i++) {
+            if (nomes[i].contains(busca)) {
+                solicitarInformacao(i);
+            }else{
+            JOptionPane.showMessageDialog(null, "!! Delegacia não Cadastrada !!");
+            return;    
+        } 
     }
     }
 

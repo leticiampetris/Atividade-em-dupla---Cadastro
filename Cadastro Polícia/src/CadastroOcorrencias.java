@@ -38,7 +38,7 @@ public class CadastroOcorrencias {
         int editar = Integer.parseInt(JOptionPane.showInputDialog(
                 "Digite o código do B.O que dejesa editar:"));
         for(int i = 0; i < atual; i++){
-            if(boletim[atual]==editar){
+            if(boletim[i]==editar){
                 solicitarInformacoes(i);
             }
         }
@@ -236,7 +236,6 @@ public class CadastroOcorrencias {
                 ""
         ).toString();
         endereco[posicao] = JOptionPane.showInputDialog("Endereço: ");
-        delegacias[posicao] = JOptionPane.showInputDialog("Delegacia: ");
         boletim[posicao] = Integer.parseInt(JOptionPane.showInputDialog(
                 "Digite o código do boletim de ocorrência:"));
         
@@ -248,7 +247,7 @@ public class CadastroOcorrencias {
         
         delegacias[posicao] = JOptionPane.showInputDialog(null,
                 "Selecione a delegacia de vinculação:",
-                "VIATURAS",
+                "OCORRENCIAS",
                 JOptionPane.QUESTION_MESSAGE,
                 null,
                 delegaciasObject, null).toString();

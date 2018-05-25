@@ -27,18 +27,21 @@ public class CadastroAgentes {
     public void listarAgentes() {
         String texto = "";
         for (int i = 0; i < atual; i++) {
-            texto += nomes[i] + " " + patentes[i] + "\n";
+            texto += "|" + nomes[i] + " |" + patentes[i] + "\n";
         }
 
-        JOptionPane.showMessageDialog(null, "Agentes Cadastrados"
+        JOptionPane.showMessageDialog(null, "Agentes Cadastrados: "
+                + "\nNomes  |Patentes"
                 + "\n" + texto);
     }
 
     public void editarAgente() {
-        String editar = JOptionPane.showInputDialog("Digite o nome para busca");
+       
+        String editar = JOptionPane.showInputDialog("Digite o nome para busca:");
+       
         for (int i = 0; i < atual; i++) {
-            if (nomes[atual].equalsIgnoreCase(editar)) {
-                solicitarInformacao(atual);
+            if (nomes[i].contains(editar)) {
+                solicitarInformacao(i);
                 return;
 
             }
