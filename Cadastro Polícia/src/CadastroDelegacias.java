@@ -22,14 +22,20 @@ public class CadastroDelegacias {
     static int atual = 0;
 
     public void solicitarInformacao(int posicao) {
-
+        
         nomes[posicao] = JOptionPane.showInputDialog("Digite o nome da delegacia:");
         ruas[posicao] = JOptionPane.showInputDialog("Digite o logradouro:");
         numeros[posicao] = JOptionPane.showInputDialog("Digite o número do imóvel:");
         complementos[posicao] = JOptionPane.showInputDialog("Digite o complemento:");
         bairros[posicao] = JOptionPane.showInputDialog("Digite o bairro:");
-        ceps[posicao] = JOptionPane.showInputDialog("Digite o CEP");
-        telefones[posicao] = JOptionPane.showInputDialog("Digite o telefone:");
+        ceps[posicao] = JOptionPane.showInputDialog("Digite o CEP:")
+                .replace("-", "")
+                .replace("/", "")
+                .replace(".", "");
+        telefones[posicao] = JOptionPane.showInputDialog("Digite o telefone:")
+                .replace("(", "")
+                .replace(")", "")
+                .replace("-", "");
         horarios[posicao] = JOptionPane.showInputDialog("Digite o horário de funcionamento:");
         delegados[posicao] = JOptionPane.showInputDialog("Digite o nome do delegado:");
         areas[posicao] = JOptionPane.showInputDialog(null, "Informe a área de abrangência:", null,
