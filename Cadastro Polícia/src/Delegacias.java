@@ -1,4 +1,5 @@
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,8 +13,10 @@ public class Delegacias {
         CadastroDelegacias registroDelegacias = new CadastroDelegacias();
 
         int menuDelegacias = JOptionPane.showOptionDialog(null,
-                "Selecione a opção desejada:", "DELEGACIAS", 0,
-                JOptionPane.QUESTION_MESSAGE, null,
+                "Selecione a opção desejada:", "DELEGACIAS", 
+                0,
+                JOptionPane.QUESTION_MESSAGE, 
+                new ImageIcon(Menu.class.getResource("imagens/security.png")),
                 new Object[]{
                     "Cadastrar",
                     "Editar",
@@ -38,8 +41,10 @@ public class Delegacias {
             }
             
             menuDelegacias = JOptionPane.showOptionDialog(null,
-                "Selecione a opção desejada:", "DELEGACIAS", 0,
-                JOptionPane.QUESTION_MESSAGE, null,
+                "Selecione a opção desejada:", "DELEGACIAS", 
+                0,
+                JOptionPane.QUESTION_MESSAGE, 
+                new ImageIcon(Menu.class.getResource("imagens/security.png")),
                 new Object[]{
                     "Cadastrar",
                     "Editar",

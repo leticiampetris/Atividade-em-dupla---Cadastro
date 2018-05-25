@@ -1,5 +1,6 @@
 
 import java.util.Scanner;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +15,8 @@ public class Viaturas {
         
         int menuViaturas = JOptionPane.showOptionDialog(null,
                 "Selecione a opção desejada:", "VIATURAS", 0,
-                JOptionPane.QUESTION_MESSAGE, null,
+                JOptionPane.QUESTION_MESSAGE, 
+                new ImageIcon(Menu.class.getResource("imagens/security.png")),
                 new Object[]{
                     "Cadastrar",
                     "Editar",
@@ -37,7 +39,8 @@ public class Viaturas {
             
             menuViaturas = JOptionPane.showOptionDialog(null,
                 "Selecione a opção desejada:", "VIATURAS", 0,
-                JOptionPane.QUESTION_MESSAGE, null,
+                JOptionPane.QUESTION_MESSAGE, 
+                new ImageIcon(Menu.class.getResource("imagens/security.png")),
                 new Object[]{
                     "Cadastrar",
                     "Editar",

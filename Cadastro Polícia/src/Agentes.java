@@ -1,4 +1,5 @@
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class Agentes {
@@ -7,10 +8,10 @@ public class Agentes {
     
     public void menuAgentes(){
         int opcao = JOptionPane.showOptionDialog(null, 
-                "Selecione a opção desejada", "AGENTES", 
+                "Selecione a opção desejada:", "AGENTES", 
                 0,
                 JOptionPane.QUESTION_MESSAGE,
-                null,
+                new ImageIcon(Menu.class.getResource("imagens/security.png")),
                 new Object[]{
                     "Cadastrar", "Editar", "Listar"
                 },null            
@@ -33,7 +34,7 @@ public class Agentes {
                 "Selecione a opção desejada", "AGENTES", 
                 0,
                 JOptionPane.QUESTION_MESSAGE,
-                null,
+                new ImageIcon(Menu.class.getResource("imagens/security.png")),
                 new Object[]{
                     "Cadastrar", "Editar", "Listar"
                 },null            
@@ -41,14 +42,8 @@ public class Agentes {
             
         }
         
-    }
-    
-    public static void main(String[] args){
-        new Agentes(). menuAgentes();
-        
-        
-        
+    }        
     }
     
 
-}
+

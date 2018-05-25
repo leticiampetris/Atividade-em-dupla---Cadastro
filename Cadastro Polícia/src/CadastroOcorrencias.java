@@ -24,7 +24,7 @@ public class CadastroOcorrencias {
         
     public void listar(){
         int busca = Integer.parseInt(JOptionPane.showInputDialog(
-                "Digite o código do B.O para buscar"));
+                "Digite o código do B.O para buscar:"));
         for(int i = 0; i < atual; i++){
             if(boletim[i]==busca){
                 apresentarInformacoes(i);       
@@ -208,7 +208,7 @@ public class CadastroOcorrencias {
     
     public void solicitarInformacoes(int posicao){
         
-        data[posicao] = JOptionPane.showInputDialog(null, "Data da ocorrência:", "OCORRÊNCIAS");
+        data[posicao] = JOptionPane.showInputDialog(null, "Data da ocorrência:");
         periodo[posicao] = JOptionPane.showInputDialog(null, "Período", null,
                 JOptionPane.QUESTION_MESSAGE,
                 null, new Object[]{
@@ -216,7 +216,7 @@ public class CadastroOcorrencias {
                 },
                 ""
         ).toString();
-        tipo[posicao] = JOptionPane.showInputDialog(null, "Classificação", "OCORRÊNCIAS",
+        tipo[posicao] = JOptionPane.showInputDialog(null, "Classificação:", "OCORRÊNCIAS",
                 JOptionPane.QUESTION_MESSAGE,
                 null, new Object[]{
                     "", "Assalto", "Homicídio","Pertubação da Paz", "Roubo", "Tráfico de Drogas", 
@@ -224,7 +224,7 @@ public class CadastroOcorrencias {
                 },
                 ""
         ).toString();
-        descricao[posicao] = JOptionPane.showInputDialog("Descrição dos fatos: ");
+        descricao[posicao] = JOptionPane.showInputDialog("Descrição dos fatos: ").toUpperCase();
         regiao[posicao] = JOptionPane.showInputDialog(null, "Selecione a região: ", null,
                 JOptionPane.QUESTION_MESSAGE,
                 null, new Object[]{
@@ -254,13 +254,13 @@ public class CadastroOcorrencias {
     
     public void apresentarInformacoes(int posicao){
         JOptionPane.showMessageDialog(null, "Informações sobre a Ocorrência: "
-        + "\nData da Ocorrência:" + data[posicao]
+        + "\nData da Ocorrência: " + data[posicao]
         + "\nPeríodo: " + periodo[posicao]
-        + "\nClassificação:" + tipo[posicao]
-        + "\nDescrição:" + descricao[posicao]
-        + "\nRegião:" + regiao[posicao]
-        + "\nEndereço:" + endereco[posicao]
-        + "\nDelegacia:");
+        + "\nClassificação: " + tipo[posicao]
+        + "\nDescrição: " + descricao[posicao]
+        + "\nRegião: " + regiao[posicao]
+        + "\nEndereço: " + endereco[posicao]
+        + "\nDelegacia: ");
     }
    
         

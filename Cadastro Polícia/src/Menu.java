@@ -4,6 +4,7 @@
  * @author Leticia e Gabriel B.
  */
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class Menu {
@@ -13,10 +14,13 @@ public class Menu {
     Viaturas viaturas = new Viaturas();
     Delegacias delegacias = new Delegacias();
     
+    
     public void menuPrincipal(){
         int principal = JOptionPane.showOptionDialog(null,
-                "Selecione a opção desejada:", "SISTEMA POLICIAL", 0,
-                JOptionPane.QUESTION_MESSAGE, null,
+                "Bem Vindo!! "
+              + "\nSelecione a opção desejada:", "SISTEMA POLICIAL", 0,
+                JOptionPane.INFORMATION_MESSAGE, 
+                new ImageIcon(Menu.class.getResource("imagens/security.png")),
                 new Object[]{
                 "Agentes",
                 "Ocorrências",
@@ -40,7 +44,8 @@ public class Menu {
             }
            principal = JOptionPane.showOptionDialog(null,
                 "Selecione a opção desejada:", "SISTEMA POLICIAL", 0,
-                JOptionPane.QUESTION_MESSAGE, null,
+                JOptionPane.QUESTION_MESSAGE, 
+                new ImageIcon(Menu.class.getResource("imagens/security.png")),
                 new Object[]{
                 "Agentes",
                 "Ocorrências",
