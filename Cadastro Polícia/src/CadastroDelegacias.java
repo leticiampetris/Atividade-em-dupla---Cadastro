@@ -1,4 +1,5 @@
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,8 +32,13 @@ public class CadastroDelegacias {
         telefones[posicao] = JOptionPane.showInputDialog("Digite o telefone:");
         horarios[posicao] = JOptionPane.showInputDialog("Digite o horário de funcionamento:");
         delegados[posicao] = JOptionPane.showInputDialog("Digite o nome do delegado:");
-        areas[posicao] = JOptionPane.showInputDialog("Informe a área de abrangência de " +
-                nomes[posicao] + ":");
+        areas[posicao] = JOptionPane.showInputDialog(null, "Informe a área de abrangência:", null,
+                JOptionPane.QUESTION_MESSAGE,
+                null, new Object[]{
+                    "", "Norte", "Sul", "Leste", "Oeste", "Centro"
+                },
+                ""
+        ).toString();
     }
 
     public void cadastrar() {
@@ -104,7 +110,9 @@ public class CadastroDelegacias {
                 selecao + " possui:" +
                 "\n" + quantidadeAgentes + " agentes." +
                 "\n" + quantidadeOcorrencias + " ocorrências." +
-                "\n" + quantidadeViaturas + " viaturas.");
+                "\n" + quantidadeViaturas + " viaturas.", null,
+                JOptionPane.INFORMATION_MESSAGE,
+                new ImageIcon(CadastroDelegacias.class.getResource("imagens/reports.png")));
         }
       
     }

@@ -1,4 +1,5 @@
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class CadastroOcorrencias {
@@ -202,7 +203,9 @@ public class CadastroOcorrencias {
         JOptionPane.showMessageDialog(null, "Dados da Ocorrências"
          + "\nRegião(ões) com maior registro de ocorrências: " + regiaoA
          + "\nPeríodo(s) com maior registro de ocorrências: " + periodoA
-         + "\nTipo(s) mais frequente de ocorrências: " + ocorrencias); 
+         + "\nTipo(s) mais frequente de ocorrências: " + ocorrencias, null,
+                JOptionPane.QUESTION_MESSAGE, 
+                new ImageIcon(CadastroOcorrencias.class.getResource("imagens/reports.png"))); 
         
     }
     
