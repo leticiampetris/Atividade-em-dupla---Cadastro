@@ -211,6 +211,11 @@ public class CadastroOcorrencias {
     
     public void solicitarInformacoes(int posicao){
         
+        if(CadastroDelegacias.atual == 0){
+            JOptionPane.showMessageDialog(null, "!!Atenção!! \nÉ preciso cadastrar Delegacia");
+            
+        }else{
+        
         data[posicao] = JOptionPane.showInputDialog(null, "Data da ocorrência:");
         periodo[posicao] = JOptionPane.showInputDialog(null, "Período", null,
                 JOptionPane.QUESTION_MESSAGE,
@@ -253,7 +258,7 @@ public class CadastroOcorrencias {
                 delegaciasObject, null).toString();
      
     }
-    
+    }
     public void apresentarInformacoes(int posicao){
         JOptionPane.showMessageDialog(null, "Informações sobre a Ocorrência: "
         + "\nData da Ocorrência: " + data[posicao]

@@ -17,7 +17,12 @@ public class CadastroViaturas {
     static int atual = 0;
 
     public void solicitarInformacao(int posicao) {
-
+        
+        if(CadastroDelegacias.atual == 0){
+            JOptionPane.showMessageDialog(null, "!!Atenção!! \nÉ preciso cadastrar Delegacia");
+            
+        }else{
+       
         tipos[posicao] = JOptionPane.showInputDialog(null,
                 "Selecione o tipo de viatura:",
                 null,
@@ -45,7 +50,8 @@ public class CadastroViaturas {
                 null,
                 delegaciasObject, null).toString();
     }
-
+    }
+    
     public void cadastrar() {
         solicitarInformacao(atual);
         atual++;
