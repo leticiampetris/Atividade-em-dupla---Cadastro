@@ -20,6 +20,7 @@ public class CadastroAgentes {
     static int atual = 0;
 
     public void cadastrarAgente() {
+    
         solicitarInformacao(atual);
         atual++;
     }
@@ -49,6 +50,13 @@ public class CadastroAgentes {
     }
 
     public void solicitarInformacao(int posicao) {
+        
+        if(CadastroDelegacias.atual == 0){
+            JOptionPane.showMessageDialog(null, "!!Atenção!! \nÉ preciso cadastrar Delegacia");
+            
+        }else{
+        
+        
         nomes[posicao] = JOptionPane.showInputDialog(
                 "Nome do Agente: ").trim();
         sexos[posicao] = JOptionPane.showInputDialog(null,
@@ -92,7 +100,7 @@ public class CadastroAgentes {
                 JOptionPane.QUESTION_MESSAGE,
                 null,
                 delegaciasObject, null).toString();
-
+        }
     }
 
     public void apresentarInformacao(int posicao) {
