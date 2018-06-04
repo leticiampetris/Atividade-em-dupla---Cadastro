@@ -1,4 +1,4 @@
- 
+
 import javax.swing.JOptionPane;
 
 public class CadastroAgentes {
@@ -20,7 +20,7 @@ public class CadastroAgentes {
     static int atual = 0;
 
     public void cadastrarAgente() {
-    
+
         solicitarInformacao(atual);
         atual++;
     }
@@ -37,69 +37,77 @@ public class CadastroAgentes {
     }
 
     public void editarAgente() {
-       
-        String editar = JOptionPane.showInputDialog("Digite o nome para busca:");
-       
-        for (int i = 0; i < atual; i++) {
-            if (nomes[i].contains(editar)) {
-                solicitarInformacao(i);
-                return;
 
+        if (CadastroAgentes.atual == 0) {
+
+            JOptionPane.showMessageDialog(null, "Nenhum agente foi cadastrado.");
+
+        } else {
+
+            String editar = JOptionPane.showInputDialog("Digite o nome para busca:");
+
+            for (int i = 0; i < atual; i++) {
+                if (nomes[i].contains(editar)) {
+                    solicitarInformacao(i);
+                    return;
+
+                }
             }
+
         }
+
     }
 
     public void solicitarInformacao(int posicao) {
-        
-        if(CadastroDelegacias.atual == 0){
+
+        if (CadastroDelegacias.atual == 0) {
             JOptionPane.showMessageDialog(null, "!!Atenção!! \nÉ preciso cadastrar ao menos uma Delegacia");
-            
-        }else{
-        
-        
-        nomes[posicao] = JOptionPane.showInputDialog(
-                "Nome do Agente: ").trim();
-        sexos[posicao] = JOptionPane.showInputDialog(null,
-                "Sexo", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
-                    "", "Masculino", "Feminino"
-                },
-                ""
-        ).toString();
-        patentes[posicao] = JOptionPane.showInputDialog("Patente:").trim();
-        cpfs[posicao] = JOptionPane.showInputDialog("CPF do Agente:")
-                .replace(".", "")
-                .replace("-", "")
-                .replace("/", "").trim();
-        rgs[posicao] = JOptionPane.showInputDialog("RG do Agente:")
-                .replace(".", "")
-                .replace("/", "")
-                .replace("-", "").trim();
-        nascimentos[posicao] = JOptionPane.showInputDialog("Data de nascimento:")
-                .replace("/", "")
-                .replace(".", "")
-                .replace("-", "").trim();
-        bairros[posicao] = JOptionPane.showInputDialog("Bairro:").trim();
-        ruas[posicao] = JOptionPane.showInputDialog(null, "Logradouro:").trim();
-        numeros[posicao] = JOptionPane.showInputDialog(null, "Nº:").trim();
-        ceps[posicao] = JOptionPane.showInputDialog(null, "CEP:").trim();
-        complementos[posicao] = JOptionPane.showInputDialog(null, "Complemento:");
-        admissoes[posicao] = JOptionPane.showInputDialog(null, "Data de admissão:")
-                .replace("/", "")
-                .replace(".", "")
-                .replace("-", "").trim();
 
-        Object[] delegaciasObject = new Object[CadastroDelegacias.atual];
+        } else {
 
-        for (int posicaoAux = 0; posicaoAux < CadastroDelegacias.atual; posicaoAux++) {
-            delegaciasObject[posicaoAux] = CadastroDelegacias.nomes[posicaoAux];
-        }
+            nomes[posicao] = JOptionPane.showInputDialog(
+                    "Nome do Agente: ").trim();
+            sexos[posicao] = JOptionPane.showInputDialog(null,
+                    "Sexo", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                        "", "Masculino", "Feminino"
+                    },
+                    ""
+            ).toString();
+            patentes[posicao] = JOptionPane.showInputDialog("Patente:").trim();
+            cpfs[posicao] = JOptionPane.showInputDialog("CPF do Agente:")
+                    .replace(".", "")
+                    .replace("-", "")
+                    .replace("/", "").trim();
+            rgs[posicao] = JOptionPane.showInputDialog("RG do Agente:")
+                    .replace(".", "")
+                    .replace("/", "")
+                    .replace("-", "").trim();
+            nascimentos[posicao] = JOptionPane.showInputDialog("Data de nascimento:")
+                    .replace("/", "")
+                    .replace(".", "")
+                    .replace("-", "").trim();
+            bairros[posicao] = JOptionPane.showInputDialog("Bairro:").trim();
+            ruas[posicao] = JOptionPane.showInputDialog(null, "Logradouro:").trim();
+            numeros[posicao] = JOptionPane.showInputDialog(null, "Nº:").trim();
+            ceps[posicao] = JOptionPane.showInputDialog(null, "CEP:").trim();
+            complementos[posicao] = JOptionPane.showInputDialog(null, "Complemento:");
+            admissoes[posicao] = JOptionPane.showInputDialog(null, "Data de admissão:")
+                    .replace("/", "")
+                    .replace(".", "")
+                    .replace("-", "").trim();
 
-        delegacias[posicao] = JOptionPane.showInputDialog(null,
-                "Selecione a delegacia de vinculação:",
-                "AGENTES",
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                delegaciasObject, null).toString();
+            Object[] delegaciasObject = new Object[CadastroDelegacias.atual];
+
+            for (int posicaoAux = 0; posicaoAux < CadastroDelegacias.atual; posicaoAux++) {
+                delegaciasObject[posicaoAux] = CadastroDelegacias.nomes[posicaoAux];
+            }
+
+            delegacias[posicao] = JOptionPane.showInputDialog(null,
+                    "Selecione a delegacia de vinculação:",
+                    "AGENTES",
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    delegaciasObject, null).toString();
         }
     }
 
