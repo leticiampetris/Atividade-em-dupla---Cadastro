@@ -18,8 +18,7 @@ public class Menu {
     public void menuPrincipal(){
         int principal = JOptionPane.showOptionDialog(null,
                 "Bem Vindo!! "
-              + "\nSelecione a opção desejada: \n\n!!ATENÇÃO!! Favor cadastrar primeiro a delegacia", 
-                "SISTEMA POLICIAL" , 
+              + "\nSelecione a opção desejada:", null, 
                 0,
                 JOptionPane.INFORMATION_MESSAGE, 
                 new ImageIcon(Menu.class.getResource("imagens/security.png")),

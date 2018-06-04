@@ -212,7 +212,7 @@ public class CadastroOcorrencias {
     public void solicitarInformacoes(int posicao){
         
         if(CadastroDelegacias.atual == 0){
-            JOptionPane.showMessageDialog(null, "!!Atenção!! \nÉ preciso cadastrar Delegacia");
+            JOptionPane.showMessageDialog(null, "!!Atenção!! \nÉ preciso cadastrar ao menos uma Delegacia");
             
         }else{
         
